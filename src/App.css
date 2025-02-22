@@ -2,12 +2,7 @@
   text-align: center;
 }
 
-
-
-
-
 .App-header {
-  background-image:() ;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,64 +17,91 @@
   color: #61dafb;
 }
 
-.Movie-Container{
+.Movie-Container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  padding: 10px;
 }
 
 .Movie-Wrapper {
-  width: 240px; 
+  width: 48%;
   background-color: antiquewhite;
   color: black;
-  border: 1px solid #ddd; 
-  border-radius: 8px; 
-  overflow: hidden; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  text-align: center; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .Movie-Wrapper:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .Movie-Image {
-  width: 100%; 
-  height: 350px; 
-  object-fit: cover; 
-  border-radius: 8px 8px 0 0; 
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Ubah object-fit menjadi contain */
+  border-radius: 8px 8px 0 0;
 }
 
-.Search-Bar{
-  height: 25px;
-  font-size: 24px;
-  margin-bottom: 32px;
-  padding : 16px;
+.Search-Bar {
+  height: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 8px;
   font-weight: bold;
-  width: 375px;
+  width: 90%;
 }
 
-.Movie-Title{
-  height: 60px;
-  margin-top: 26px;
-  font-weight: bold;
+.Movie-Title {
+  height: auto;
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: 600;
 }
 
-.Movie-Date{
-  margin-top: 26px;
+.Movie-Date {
+  margin-top: 10px;
   font-style: italic;
+  font-size: 0.8em;
 }
 
-.Movie-Rate{
-  color : red;
+.Movie-Rate {
+  color: red;
   font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 24px;
+  font-size: 1em;
+  margin-bottom: 10px;
   text-decoration: underline;
 }
 
+/* Penyesuaian Responsif untuk Ponsel */
+@media (max-width: 767px) {
+  .Movie-Wrapper {
+      width: 48%;
+  }
+
+  .Movie-Image {
+      height: 150px;
+  }
+
+  .Movie-Title {
+      font-size: 0.9em;
+  }
+
+  .Movie-Date, .Movie-Rate {
+      font-size: 0.7em;
+  }
+}
+
+/* Tambahkan overflow-x: hidden ke body */
+body {
+  overflow-x: hidden;
+}
